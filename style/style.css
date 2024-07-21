@@ -1,0 +1,128 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html {
+  font-family: Poppins;
+}
+nav {
+  background-color: #113334;
+  height: 4.5rem;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.nav-brand {
+  margin-left: 20px;
+  color: white;
+  text-decoration: none;
+  display: block;
+  height: 4.5rem;
+  line-height: 4.5rem;
+  font-size: 20px;
+}
+.nav-brand:hover span.logo {
+  color: #8ed8a9;
+}
+.container {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin: 0 auto;
+  width: 100%;
+}
+.button {
+  background-color: #f35a39;
+  color: white;
+  margin-top: 3px;
+  text-decoration: none;
+  padding: 0rem 1rem;
+  border-radius: 5px;
+  line-height: 2.7rem;
+}
+.button:hover {
+  background-color: #d05236;
+}
+.main-header {
+  margin-top: 10px;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  text-align: center;
+  color: #113334;
+  letter-spacing: 0.25rem;
+}
+.card {
+  background-color: #f3f4f5;
+  /* padding: 1rem; */
+  margin-bottom: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0px 0.5rem 1rem rgba(0, 0, 0, 0.1);
+  display: flex;
+  overflow: hidden;
+}
+.card_heading {
+  margin: 0;
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1120px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+.card_image {
+  display: block;
+  width: 26rem;
+  height: 10rem;
+  min-height: 100%;
+  object-fit: cover;
+  box-shadow: 0.25rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
+}
+.card_desc-time {
+  color: #328677;
+  text-transform: uppercase;
+  font-weight: bold;
+  padding-top: 1.5rem;
+  padding-bottom: 1rem;
+}
+.card_heading {
+  color: #113343;
+  font-size: 1.75rem;
+}
+.card_heading::after {
+  content: "";
+  display: block;
+  width: 6rem;
+  height: 0.125rem;
+  background-color: #328677;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.card_paragraph {
+  color: #113343;
+  line-height: 1.33em;
+  font-size: 1rem;
+}
+.card_desc-container {
+  padding-left: 1rem;
+  padding-right: 2rem;
+  padding-bottom: 1rem;
+}
