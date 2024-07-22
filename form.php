@@ -1,15 +1,24 @@
 <?php
 require __DIR__ . '/inc/function.inc.php';
 require __DIR__ . '/inc/dbcon.inc.php';
-$stem=$pdo->prepare('SELECT * FROM `entires`');
-$stem->execute();
-$results=$stem->fetchAll();
+$title=$_POST['title'];
+$date=$_POST['date'];
+$message=$_POST['message'];
+$image_name=$_POST['image_name'];
+if(!empty($title) && !empty($date) && !empty($message) && !empty($image_name)){
+  $stem=$pdo->prepare('INSERT INTO `entires` (`id`, `title`, `message`, `date`, `image_name`) VALUES (NULL, :title, :message, :date,:image_name );');
+  $stem->bindValue("title",$title);
+  $stem->bindValue("message",$message);
+  $stem->bindValue("date",$date);
+  $stem->bindValue("image_name",$image_name);
+  $stem->execute();
+}
 ?>
 <?php include __DIR__ . '/inc/header.inc.php'; ?>
     <main>
       <div class="container">
         <h1 class="main-header">New Entry</h1>
-        <form action="form.html" method="post">
+        <form action="form.php" method="post">
           <div class="form-group">
             <label for="title" class="form-group-label">Title:</label>
             <input
@@ -31,7 +40,11 @@ $results=$stem->fetchAll();
               class="form-group-input"
               rows="6"
             ></textarea>
+            
           </div>
+          <div class="form-group">
+              <input type="file" name="image_name" id="image" class="image_name">
+            </div>
           <div class="form-submit">
             <button type="submit" class="btn">
               <span class="fab fa-telegram button_icon"></span>save
