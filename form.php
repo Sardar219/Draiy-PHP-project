@@ -1,23 +1,11 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Diary Project</title>
-    <link rel="stylesheet" href="style/style.css" />
-    <link rel="stylesheet" href="fontawasome/css/all.css" />
-  </head>
-  <body>
-    <nav>
-      <a href="index.php" class="nav-brand">
-        <span class="fab fa-42-group logo"></span>
-        sardar
-      </a>
-      <a href="form.php" class="button">
-        <span class="fa fa-add"></span>
-        New Enter
-      </a>
-    </nav>
+<?php
+require __DIR__ . '/inc/function.inc.php';
+require __DIR__ . '/inc/dbcon.inc.php';
+$stem=$pdo->prepare('SELECT * FROM `entires`');
+$stem->execute();
+$results=$stem->fetchAll();
+?>
+<?php include __DIR__ . '/inc/header.inc.php'; ?>
     <main>
       <div class="container">
         <h1 class="main-header">New Entry</h1>
@@ -52,15 +40,6 @@
         </form>
       </div>
     </main>
-    <footer class="footer">
-      <div class="container">
-        <h3 class="footer_heading">PHP diary project</h3>
-        <p class="footer_desc">
-          Lorem ipsum dolor sit amet, consectetur adipisicing elit. Laborum
-          veniam quos fugit laboriosam aperiam deserunt consectetur dicta quas,
-          adipisci earum!
-        </p>
-      </div>
-    </footer>
-  </body>
-</html>
+<?php
+require __DIR__ . '/inc/footer.inc.php';
+?>
