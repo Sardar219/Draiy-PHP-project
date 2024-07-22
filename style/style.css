@@ -93,6 +93,7 @@ nav {
   width: 100%;
   height: 15rem;
   box-shadow: 0.25rem 0rem 0.5rem rgba(236, 223, 223, 0.1);
+  border-radius: 1rem;
 }
 @media (min-width: 768px) {
   .container {
@@ -102,6 +103,7 @@ nav {
     width: 15rem;
     height: 2rem;
     min-height: 100%;
+    border-radius: 1rem;
     box-shadow: 0.25rem 0rem 0.5rem rgba(0, 0, 0, 0.1);
   }
 }
@@ -134,4 +136,91 @@ nav {
   padding-left: 1rem;
   padding-right: 2rem;
   padding-bottom: 1rem;
+}
+.pagination {
+  display: flex;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  justify-content: flex-end;
+}
+.pagination-link {
+  display: block;
+  color: #328677;
+  border: 0.125rem solid rgb(200, 200, 200);
+  width: 2rem;
+  height: 2rem;
+  text-decoration: none;
+  text-align: center;
+  line-height: 1.75rem;
+  margin-left: 0.5rem;
+  border-radius: 0.5rem;
+}
+.pagination-link:hover {
+  color: white;
+  background-color: #328677;
+  border: 0.125rem solid #328677;
+}
+.pagination_link-active {
+  border: 0.125rem solid #328677;
+  color: #328677;
+}
+.footer {
+  background-color: #113343;
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-top: 2rem;
+}
+.footer::after {
+  content: "";
+  display: block;
+  width: 7.5rem;
+  height: 0.125rem;
+  background-color: white;
+  margin: 0 auto;
+  opacity: 0.5;
+  margin-top: 2.5rem;
+}
+.footer_heading {
+  color: white;
+}
+.footer_desc {
+  color: #8ed8a9;
+  max-width: 20rem;
+  line-height: 1.33rem;
+}
+.form-group {
+  display: flex;
+  margin: 1rem;
+}
+.form-group-label,
+.form-group-input {
+  color: #113343;
+
+  background-color: rgb(200, 200, 200);
+  border-style: solid;
+  border-color: rgb(100, 100, 100);
+
+  padding: 0.5rem 1rem;
+
+  font-weight: bold;
+}
+.form-group-label {
+  text-transform: uppercase;
+  flex: 0 0 7.5rem;
+  border-top-width: 0.125rem;
+  border-left-width: 0.125rem;
+  border-bottom-width: 0.125rem;
+  border-right-width: 0;
+  border-top-left-radius: 0.5rem;
+  border-bottom-left-radius: 0.5rem;
+}
+.form-group-input {
+  flex: 1 0 10rem;
+  border-top-width: 0.125rem;
+  border-right-width: 0.125rem;
+  border-bottom-width: 0.125rem;
+  border-left-width: 0;
+  border-top-right-radius: 0.5rem;
+  border-bottom-right-radius: 0.5rem;
 }
