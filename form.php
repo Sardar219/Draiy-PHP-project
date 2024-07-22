@@ -5,7 +5,7 @@ $title=$_POST['title'];
 $date=$_POST['date'];
 $message=$_POST['message'];
 $image_name=$_POST['image_name'];
-if(!empty($title) && !empty($date) && !empty($message) && !empty($image_name)){
+if(!empty($_POST)){
   $stem=$pdo->prepare('INSERT INTO `entires` (`id`, `title`, `message`, `date`, `image_name`) VALUES (NULL, :title, :message, :date,:image_name );');
   $stem->bindValue("title",$title);
   $stem->bindValue("message",$message);
