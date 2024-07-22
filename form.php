@@ -9,11 +9,11 @@
   </head>
   <body>
     <nav>
-      <a href="index.html" class="nav-brand">
+      <a href="index.php" class="nav-brand">
         <span class="fab fa-42-group logo"></span>
         sardar
       </a>
-      <a href="form.html" class="button">
+      <a href="form.php" class="button">
         <span class="fa fa-add"></span>
         New Enter
       </a>
