@@ -224,3 +224,19 @@ nav {
   border-top-right-radius: 0.5rem;
   border-bottom-right-radius: 0.5rem;
 }
+.form-submit {
+  display: flex;
+  justify-content: end;
+  padding-right: 15px;
+}
+.btn {
+  border: 1px solid #f3f4f5;
+  color: white;
+  background-color: #f35a39;
+  padding: 8px;
+  font-size: 18px;
+  border-radius: 5px;
+}
+.button_icon {
+  margin-right: 10px;
+}
