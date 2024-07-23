@@ -1,24 +1,26 @@
 <?php
 require __DIR__ . '/inc/function.inc.php';
 require __DIR__ . '/inc/dbcon.inc.php';
-$title=$_POST['title'];
-$date=$_POST['date'];
-$message=$_POST['message'];
-$image_name=$_POST['image_name'];
+$title=$_POST['title'] ?? null;
+$date=$_POST['date'] ?? null;
+$message=nl2br($_POST['message'] ?? null);
+$image_name=$_POST['image_name'] ?? null;
 if(!empty($_POST)){
   $stem=$pdo->prepare('INSERT INTO `entires` (`id`, `title`, `message`, `date`, `image_name`) VALUES (NULL, :title, :message, :date,:image_name );');
   $stem->bindValue("title",$title);
   $stem->bindValue("message",$message);
   $stem->bindValue("date",$date);
   $stem->bindValue("image_name",$image_name);
-  $stem->execute();
+  if(!empty($title) && !empty($date) && !empty($message) && !empty($image_name)){
+    $stem->execute();
+  }
 }
 ?>
 <?php include __DIR__ . '/inc/header.inc.php'; ?>
     <main>
       <div class="container">
         <h1 class="main-header">New Entry</h1>
-        <form action="form.php" method="post">
+        <form action="form.php" method="POST">
           <div class="form-group">
             <label for="title" class="form-group-label">Title:</label>
             <input

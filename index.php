@@ -25,7 +25,7 @@ $results=$stem->fetchAll();
         <?php foreach ($results as $result):?>
         <div class="card">
           <div class="card_image-container">
-            <img class="card_image" src="images/<?= e($result['image_name']) ?>" alt="" />
+            <img class="card_image" src="images/<?= $result['image_name'] ?>" alt="" />
           </div>
           <div class="card_desc-container">
             <div class="card_desc-time"><?= e($result['date'])?></div>
@@ -35,16 +35,18 @@ $results=$stem->fetchAll();
         </div>
         <?php endforeach; ?>
         <ul class="pagination">
+          <?php if($page>1): ?>
           <li class="pagination_li">
             <a href="/?page=<?= $page-1 ?>" class="pagination-link">◀</a>
           </li>
+          <?php endif; ?>
           <?php for($i = 1; $i <= $numpage; $i++):?>
             <li class="pagination_li">
               <a href="/?page=<?= e($i)?>" class="pagination-link <?php if($page==$i):?>pagination_link-active<?php endif ?>"><?= e($i)?></a>
             </li>
           <?php endfor ?>
           <li class="pagination_li">
-            <a href="#" class="pagination-link">▶</a>
+            <a href="/?page=<?= $page+1 ?>" class="pagination-link">▶</a>
           </li>
         </ul>
       </div>
