@@ -5,10 +5,9 @@ $title=$_POST['title'] ?? null;
 $date=$_POST['date'] ?? null;
 $message=nl2br($_POST['message'] ?? null);
 $image_name=$_FILES['image_name']["name"] ?? null;
-var_dump($_FILES);
 if(!empty($_FILES) && !empty($_FILES["image_name"])){
   if($_FILES["image_name"]["error"] === 0 && $_FILES["image_name"]["size"] !== 0){
-    move_uploaded_file($_FILES['image_name']['tmp_name'],__DIR__."/images/".time().".jpg");
+    move_uploaded_file($_FILES['image_name']['tmp_name'],__DIR__."/images/".$_FILES['image_name']['name']);
   }
 }
 var_dump($image_name);

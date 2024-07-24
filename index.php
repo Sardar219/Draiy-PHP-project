@@ -2,7 +2,6 @@
 require __DIR__ . '/inc/function.inc.php';
 require __DIR__ . '/inc/dbcon.inc.php';
 
-date_default_timezone_set("Asia/Kabul");
 
 $prePage=4;
 $page=(int)($_GET['page'] ?? 1);
@@ -31,10 +30,6 @@ $results=$stem->fetchAll();
             <img class="card_image" src="images/<?= $result['image_name'] ?>" alt="" />
           </div>
           <div class="card_desc-container">
-            <?php 
-              $dateExplode=explode("-",$result['date']);
-              var_dump(date("Y-m-d"));
-            ?>
             <div class="card_desc-time"><?= e($result['date'])?></div>
             <h2 class="card_heading"><?= e($result['title']) ?></h2>
             <p class="card_paragraph"><?= nl2br(e($result['message'])) ?></p>
@@ -63,12 +58,5 @@ $results=$stem->fetchAll();
       </div>
     </main>
 <?php
-$start=microtime(true);
-var_dump(time());
-var_dump(microtime(true));
-$end=microtime(true);
-var_dump($end-$start);
-date_default_timezone_set("Asia/Kabul");
-var_dump(date("Y-m-d H:i:s a"));
 require __DIR__ . '/inc/footer.inc.php';
 ?>
