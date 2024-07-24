@@ -1,7 +1,7 @@
 <?php
 require __DIR__ . '/inc/function.inc.php';
 require __DIR__ . '/inc/dbcon.inc.php';
-$prePage=2;
+$prePage=4;
 $page=(int)($_GET['page'] ?? 1);
 if($page<1) $page=1;
 $offset=($page-1)*$prePage;
@@ -34,6 +34,7 @@ $results=$stem->fetchAll();
           </div>
         </div>
         <?php endforeach; ?>
+        <?php if($numpage > 1): ?>
         <ul class="pagination">
           <?php if($page>1): ?>
           <li class="pagination_li">
@@ -45,10 +46,13 @@ $results=$stem->fetchAll();
               <a href="/?page=<?= e($i)?>" class="pagination-link <?php if($page==$i):?>pagination_link-active<?php endif ?>"><?= e($i)?></a>
             </li>
           <?php endfor ?>
+          <?php if($page<$numpage):?>
           <li class="pagination_li">
             <a href="/?page=<?= $page+1 ?>" class="pagination-link">▶</a>
           </li>
+          <?php endif; ?>
         </ul>
+        <?php endif; ?>
       </div>
     </main>
 <?php
