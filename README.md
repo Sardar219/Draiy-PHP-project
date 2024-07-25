@@ -18,8 +18,6 @@ Welcome to my first php project.
 - JavaScript
 - PHP
 
-<b>[Live Demo](https://sardar219.github.io/Draiy-PHP-project/)</b>
-
 ## My Contact
 
 - [sardarhossaini2022@gmail.com](mailto:sardarhossaini2022@gmail.com)
